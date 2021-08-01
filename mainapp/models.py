@@ -73,3 +73,26 @@ class Customer(models.Model):
 
     def __str__(self):
         return f"Покупатель: {self.user.firstname} {self.user.lastname}"
+
+class Notebook(Product):
+    diagonal = models.CharField(max_length=255, verbose_name='Диагональ')
+    display_type = models.CharField(max_length=255, verbose_name='Тип дисплея')
+    processor_freq = models.CharField(max_length=255, verbose_name='Частота процессора')
+    video = models.CharField(max_length=255, verbose_name='Видеокарта')
+    ram = models.CharField(max_length=255, verbose_name='ОЗУ')
+    time_without_charge = models.CharField(max_length=255, verbose_name='Время работы аккумулятора')
+
+    def __str__(self):
+        return f'{self.category.name} : {self.title}'
+
+
+class Smartphone(Product):
+    diagonal = models.CharField(max_length=255, verbose_name='Диагональ')
+    display_type = models.CharField(max_length=255, verbose_name='Тип дисплея')
+    resolution = models.CharField(max_length=255, verbose_name='Разрешение экрана')
+    accum_volume = models.CharField(max_length=255, verbose_name='Объем батареи')
+    ram = models.CharField(max_length=255, verbose_name='ОЗУ')
+    sd = models.BooleanField(default=True)
+    sd_volume_max = models.CharField(max_length=255, verbose_name='Максимальный объем встраиваемой памяти')
+    main_cam_mp = models.CharField(max_length=255, verbose_name='Основная камера')
+    frontal_cam_mp = models.CharField(max_length=255, verbose_name='Фронтальная камера')
