@@ -1,0 +1,11 @@
+/.vscode
+/.~lock.ap.csv#
+/__pycache__
+/_utils.py
+/venv
+__pycache__
+.env
+/**/static/*
+!**/.gitkeep
+
+db.sqlite3
